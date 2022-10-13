@@ -10,14 +10,16 @@ import java.util.List;
 
 @RestController
 @CrossOrigin(origins = "*")
-@RequestMapping("/Curso")
+@RequestMapping("/curso")
 public class CursoController {
 
     @Autowired
-    private CursoService curso;
+    private CursoService cursoService;
 
-    @GetMapping(value = "/colegio/{id}")
-    public List<CursoDto> getAllCurses (@PathVariable("id") Long id){
-        return curso.getAllCurses(id);
+    @GetMapping(value = "/listarCursosColegio/{id}")
+    public List<CursoDto> getAllCurses (@PathVariable Long id){
+
+        return cursoService.getAllCurses(id);
     }
+
 }

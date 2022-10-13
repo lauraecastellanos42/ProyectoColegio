@@ -15,6 +15,6 @@ public class CursoService {
     private CursoRepository cursoRepository;
 
     public List<CursoDto> getAllCurses (Long id){
-        return cursoRepository.listarCursos(id);
+        return cursoRepository.getAllCurses(id);
     }
 }

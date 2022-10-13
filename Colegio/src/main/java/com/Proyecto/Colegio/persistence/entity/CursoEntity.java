@@ -30,5 +30,5 @@ public class CursoEntity implements Serializable {
     @ManyToOne
     @JoinColumn(name="id_colegio")
     @JsonIgnoreProperties("cursos")
-    private ColegioEntity colegioEntity;
+    private ColegioEntity colegio;
 }

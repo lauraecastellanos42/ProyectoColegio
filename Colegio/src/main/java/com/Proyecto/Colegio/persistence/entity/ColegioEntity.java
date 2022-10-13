@@ -20,6 +20,6 @@ public class ColegioEntity implements Serializable {
     @Column(name = "nombre")
     private String nombre;
 
-    @OneToMany(mappedBy = "colegioEntity",fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "colegio",fetch = FetchType.LAZY)
     private List<CursoEntity> cursos;
 }

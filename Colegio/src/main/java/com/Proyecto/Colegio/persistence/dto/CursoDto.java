@@ -10,8 +10,14 @@ import lombok.ToString;
 @ToString
 @EqualsAndHashCode
 public class CursoDto {
-
+   Long id;
    Integer grado;
    String salon;
-   ColegioDto colegio;
+
+
+   public CursoDto(Long id, Integer grado, String salon) {
+      this.id = id;
+      this.grado = grado;
+      this.salon = salon;
+   }
 }

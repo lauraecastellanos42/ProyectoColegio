@@ -13,6 +13,13 @@ import java.util.List;
 @ToString
 
 public class ColegioDto {
+    Long id;
     String nombre;
-    List<CursoEntity> cursos;
+    List<CursoDto> cursos;
+
+    public ColegioDto(Long id, String nombre,List<CursoDto> cursos) {
+        this.id = id;
+        this.nombre = nombre;
+        this.cursos = cursos;
+    }
 }
