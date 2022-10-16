@@ -31,7 +31,7 @@ public class ProfesorService {
         return profesorEntity;
     }
 
-    // permite buscar  un curso por id
+    // permite buscar  un profesor por id
     public ProfesorDto findById(Long id) {
         ProfesorDto profesorEncontrado = profesorMapper.toDto(profesorRepository.findById(id).orElse(null));
         return profesorEncontrado;
