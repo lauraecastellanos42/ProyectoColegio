@@ -1,4 +1,4 @@
-package com.colegio.PruebaTecnica.Persistence.entity;
+package com.Proyecto.Colegio.persistence.entity;
 
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -18,12 +18,10 @@ import java.util.List;
 
 public class ProfesorEntity implements Serializable {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
     private String nombre;
 
-    // Aca se debe implementar la relacion OneToMany con Asignaturas
-    @OneToMany(mappedBy = "profesor",fetch = FetchType.LAZY) //<--"profesor" es el nombre del atributo que fue mapeado
-    private List<AsignaturaEntity> asignaturas;
 }
