@@ -1,8 +1,7 @@
 package com.Proyecto.Colegio.controller;
 
-import com.Proyecto.Colegio.persistence.dto.CursoDto;
+import com.Proyecto.Colegio.dto.CursoDto;
 import com.Proyecto.Colegio.persistence.entity.CursoEntity;
-import com.Proyecto.Colegio.service.ColegioService;
 import com.Proyecto.Colegio.service.CursoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -35,4 +34,6 @@ public class CursoController {
     public CursoEntity saveCurso(@RequestBody CursoDto cursoInput){
         return cursoService.saveEntity(cursoInput);
     }
+
+
 }

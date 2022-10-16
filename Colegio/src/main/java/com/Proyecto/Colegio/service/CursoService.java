@@ -1,9 +1,8 @@
 package com.Proyecto.Colegio.service;
 
 import com.Proyecto.Colegio.mapper.CursoMapper;
-import com.Proyecto.Colegio.persistence.dto.CursoDto;
+import com.Proyecto.Colegio.dto.CursoDto;
 import com.Proyecto.Colegio.persistence.entity.CursoEntity;
-import com.Proyecto.Colegio.repository.ColegioRepository;
 import com.Proyecto.Colegio.repository.CursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,7 +20,7 @@ public class CursoService {
 
     // permite listar todos los cursos existentes en un colegio específico
     public List<CursoDto> getAllCurses (Long id){
-        return cursoRepository.getAllCurses(id);
+        return cursoMapper.toDoList(cursoRepository.getAllCurses(id));
     }
 
     // permite listar todos los cursos existentes
