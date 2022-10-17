@@ -24,4 +24,7 @@ public class ProfesorEntity implements Serializable {
     @Column
     private String nombre;
 
+    @OneToMany(mappedBy = "profesor",fetch = FetchType.LAZY) //<--"profesor" es el nombre del atributo que fue mapeado
+    private List<AsignaturaEntity> asignaturas;
+
 }
