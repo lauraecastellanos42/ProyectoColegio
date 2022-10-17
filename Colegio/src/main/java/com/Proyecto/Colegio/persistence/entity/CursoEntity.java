@@ -5,6 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.List;
 
 @Entity
 @Table(name="CURSO")
@@ -30,4 +31,7 @@ public class CursoEntity implements Serializable {
     @JoinColumn(name="id_colegio")
     @JsonIgnoreProperties("cursos")
     private ColegioEntity colegio;
+
+    @OneToMany(mappedBy = "curso",fetch = FetchType.LAZY)
+    private List<AsignaturaEntity> asignaturas;
 }

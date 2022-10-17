@@ -30,4 +30,9 @@ public class AsignaturaEntity implements Serializable {
     @JsonIgnoreProperties("asignaturas") //<-- nombre del atributo que almacena las asignaturas en la entidad profesor
     private ProfesorEntity profesor;
 
+    @ManyToOne
+    @JoinColumn(name="id_curso")
+    @JsonIgnoreProperties("asignaturas")
+    private CursoEntity curso;
+
 }

@@ -1,6 +1,5 @@
 package com.Proyecto.Colegio.dto;
 
-import com.Proyecto.Colegio.persistence.entity.ProfesorEntity;
 import lombok.*;
 
 @Getter
@@ -13,5 +12,6 @@ import lombok.*;
 public class AsignaturaDto {
     private Long id;
     private String nombre;
-    private ProfesorEntity profesor;
+    private ProfesorDto profesor;
+    private CursoDto curso;
 }
