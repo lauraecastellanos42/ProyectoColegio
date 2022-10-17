@@ -36,4 +36,9 @@ public class EstudianteService {
         return estudianteEncontrado;
     }
 
+    // permite buscar todos los estudiantes que esten viendo una asignatura por id de asignatura
+    public List <EstudianteDto> findStudentsOfSignature(Long id){
+        List<EstudianteDto> estudiantesDeAsignatura = estudianteMapper.toDoList(estudianteRepository.findAllByEstudianteEntityList(id));
+        return estudiantesDeAsignatura;
+    }
 }

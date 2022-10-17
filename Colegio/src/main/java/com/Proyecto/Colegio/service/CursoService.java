@@ -3,10 +3,14 @@ package com.Proyecto.Colegio.service;
 import com.Proyecto.Colegio.mapper.CursoMapper;
 import com.Proyecto.Colegio.dto.CursoDto;
 import com.Proyecto.Colegio.persistence.entity.CursoEntity;
+import com.Proyecto.Colegio.persistence.entity.EstudianteEntity;
 import com.Proyecto.Colegio.repository.CursoRepository;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.FetchType;
+import javax.persistence.ManyToMany;
 import java.util.List;
 
 @Service
@@ -41,5 +45,7 @@ public class CursoService {
         CursoDto cursoEncontrado = cursoMapper.toDto(cursoRepository.findById(id).orElse(null));
         return cursoEncontrado;
     }
-
+    @ManyToMany(mappedBy = "asignaturas",fetch = FetchType.LAZY)
+    @JsonIgnoreProperties("asignaturas")
+    private List<EstudianteEntity> estudiantes;
 }

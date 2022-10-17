@@ -25,4 +25,11 @@ public class EstudianteEntity implements Serializable {
     @Column
     private String nombre;
 
+    @ManyToMany(fetch = FetchType.LAZY,cascade = CascadeType.ALL)
+    @JoinTable(name = "asignatura_estudiante", // acá debe dar el nombre de la entidad debil
+            joinColumns = {@JoinColumn(name = "id_estudiante")}, // llave foranea que apunta a la entidad estudiante
+            inverseJoinColumns = {@JoinColumn(name = "id_asignatura")}) // llave foranea que apunta a asignatura
+    @JsonIgnoreProperties("estudiantes")
+    private List<AsignaturaEntity> asignaturas;
+
 }

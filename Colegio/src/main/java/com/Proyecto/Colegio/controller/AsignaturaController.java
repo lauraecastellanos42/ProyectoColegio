@@ -1,6 +1,7 @@
 package com.Proyecto.Colegio.controller;
 
 import com.Proyecto.Colegio.dto.AsignaturaDto;
+import com.Proyecto.Colegio.dto.EstudianteDto;
 import com.Proyecto.Colegio.persistence.entity.AsignaturaEntity;
 import com.Proyecto.Colegio.service.AsignaturaService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -25,8 +26,15 @@ public class AsignaturaController {
         return asignaturaService.findById(id);
     }
 
+    // permitira obtener todas las asignaturas impartidas por un profesor
+    @GetMapping(value ="profesor/{id}")
+    public List <AsignaturaDto> findSignatureOfTeacher (@PathVariable Long id){
+        return asignaturaService.asignatureByProfesor(id);
+    }
+
     @PostMapping("guardarAsignatura")
     public AsignaturaEntity saveAsignature (@RequestBody AsignaturaDto asignaturaInput){
         return asignaturaService.saveEntity(asignaturaInput);
     }
+
 }

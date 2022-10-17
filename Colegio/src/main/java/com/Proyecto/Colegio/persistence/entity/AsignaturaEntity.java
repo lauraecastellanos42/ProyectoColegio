@@ -35,4 +35,7 @@ public class AsignaturaEntity implements Serializable {
     @JsonIgnoreProperties("asignaturas")
     private CursoEntity curso;
 
+    @ManyToMany(mappedBy = "asignaturas",fetch = FetchType.LAZY)
+    @JsonIgnoreProperties("asignaturas")
+    private List<EstudianteEntity> estudiantes;
 }

@@ -28,4 +28,9 @@ public class EstudianteController {
     public EstudianteEntity saveStudent(@RequestBody EstudianteDto estudianteInput){
         return estudianteService.saveEntity(estudianteInput);
     }
+    // permite buscar todos los estudiantes que esten viendo una asignatura por id de asignatura
+    @GetMapping(value = "asignatura/{id}")
+    public List <EstudianteDto> findStudentsOfSignature (@PathVariable Long id){
+        return estudianteService.findStudentsOfSignature(id);
+    }
 }
